@@ -57,8 +57,7 @@ export const Picasso = () => {
       style={{
         backgroundColor,
         transition: "background-color 0.5s ease",
-      }}
-    >
+      }}>
       <div className="absolute z-[0] w-[100%] h-[30%] -right-[0%] rounded-full blue__gradient bottom-40" />
 
       <DarkModeSwitch />
@@ -66,8 +65,7 @@ export const Picasso = () => {
         className="flex w-full flex-col px-20 overflow-hidden"
         style={{
           height: "75vh",
-        }}
-      >
+        }}>
         <div className="flex items-center w-full">
           {isDashboardVisible && (
             <CustomDashboard handleShortcutClick={handleShortcutClick} />
@@ -79,15 +77,13 @@ export const Picasso = () => {
           style={{
             maxHeight: "100%",
             paddingRight: "1rem",
-          }}
-        >
+          }}>
           {messages.map((msg, index) => (
             <div
               key={index}
               className={`flex ${
                 msg.role === "user" ? "justify-end" : "justify-start"
-              } mb-2`}
-            >
+              } mb-2`}>
               <div
                 className={`px-4 py-2 rounded-lg ${
                   msg.role === "user" ? "bg-blue-500" : "bg-gray-700"
@@ -96,41 +92,41 @@ export const Picasso = () => {
                   maxWidth: "45%",
                   wordBreak: "break-word",
                   whiteSpace: "pre-wrap",
-                }}
-              >
+                }}>
                 {msg.content}
               </div>
             </div>
           ))}
         </div>
       </div>
-      <div className="flex items-center justify-center ">
-        <DashboardShortcutTexts
-          text="Can this AI help with scheduling and reminders?"
-          onClick={() =>
-            handleShortcutClick(
-              "Can this AI help with scheduling and reminders?"
-            )
-          }
-        />
-        <DashboardShortcutTexts
-          text="What are effective ways to set and achieve goals?"
-          onClick={() =>
-            handleShortcutClick(
-              "What are effective ways to set and achieve goals?"
-            )
-          }
-        />
-        <DashboardShortcutTexts
-          text="Generate an illustration of a cozy coffee shop."
-          onClick={() =>
-            handleShortcutClick(
-              "Generate an illustration of a cozy coffee shop."
-            )
-          }
-        />
-      </div>
-      <div className="flex w-full justify-center items-end p-2">
+
+      <div className="flex w-full justify-center items-center gap-3  flex-col">
+        <div className="flex items-center justify-center gap-3 max-w-full lg:max-w-[1200px] overflow-x-auto">
+          <DashboardShortcutTexts
+            text="Can this AI help with scheduling and reminders?"
+            onClick={() =>
+              handleShortcutClick(
+                "Can this AI help with scheduling and reminders?"
+              )
+            }
+          />
+          <DashboardShortcutTexts
+            text="What are effective ways to set and achieve goals?"
+            onClick={() =>
+              handleShortcutClick(
+                "What are effective ways to set and achieve goals?"
+              )
+            }
+          />
+          <DashboardShortcutTexts
+            text="Generate an illustration of a cozy coffee shop."
+            onClick={() =>
+              handleShortcutClick(
+                "Generate an illustration of a cozy coffee shop."
+              )
+            }
+          />
+        </div>
         <form onSubmit={handleSubmit} className="flex w-[60%]">
           <TextArea
             placeholder={
@@ -161,8 +157,7 @@ export const Picasso = () => {
               color: loading ? "#808080" : "white",
               cursor: loading ? "not-allowed" : "pointer",
               transition: "background-color 0.3s ease",
-            }}
-          >
+            }}>
             <FiSend />
           </Button>
         </form>
